@@ -2,7 +2,7 @@ import 'dotenv/config'
 import { Hono } from 'hono'
 import { cors } from 'hono/cors'
 import { logger } from 'hono/logger'
-import { serve } from '@hono/node-server'
+
 import { db, todos } from '@repo/db'
 import { eq } from 'drizzle-orm'
 const app = new Hono()
@@ -107,11 +107,4 @@ app.delete('/:id', async (c) => {
 })
 
 
-const port = Number(process.env.PORT) || 4000
-
-console.log(`🚀 Hono backend running on http://localhost:${port}`)
-
-serve({
-  fetch: app.fetch,
-  port,
-})
+export default app;
