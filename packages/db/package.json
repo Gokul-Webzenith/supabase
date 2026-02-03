@@ -10,9 +10,10 @@
     }
   },
    "scripts": {
-    "build": "tsup src/index.ts --format esm --dts --tsconfig tsconfig.json"
+    "build": "tsup src/index.ts --format esm --dts --tsconfig tsconfig.json --external drizzle-orm --external pg"
   },
   "dependencies": {
-    "drizzle-orm": "^0.45.1"
+    "drizzle-orm": "^0.45.1",
+        "pg": "^8.11.5"
   }
 }
