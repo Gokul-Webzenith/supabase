@@ -9,7 +9,7 @@ const app = new Hono()
 app.use('*', logger())
 app.use(
   cors({
-    origin: ['https://last-my-app-dun.vercel.app', 'http://localhost:3000',],
+    origin: ['https://supabase-my-app-iota.vercel.app', 'http://localhost:3000',],
     allowHeaders: ['Content-Type', 'Authorization','Access-Control-Allow-Origin'],
     allowMethods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'],
   })
