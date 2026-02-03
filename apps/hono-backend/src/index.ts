@@ -32,7 +32,7 @@ app.post('/', async (c) => {
     .insert(todos)
     .values({
       text: body.text,
-      done: false,
+      done: body.done,
       date: new Date(body.date),
       endDate: new Date(body.endDate),
     })
