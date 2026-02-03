@@ -25,7 +25,7 @@ type Todo = {
 };
 
 
-const API_URL = "https://last-hono-backend-phi.vercel.app";
+const API_URL = "https://supabase-hono-backend.vercel.app/";
 
 
 const getTodos = async (): Promise<Todo[]> => {

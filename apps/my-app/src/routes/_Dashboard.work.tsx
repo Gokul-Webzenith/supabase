@@ -28,13 +28,13 @@ type Todo = {
 
 const api = {
   getTodos: async (): Promise<Todo[]> => {
-    const res = await fetch(`http://localhost:4000/`);
+    const res = await fetch(`https://supabase-hono-backend.vercel.app/`);
     if (!res.ok) throw new Error("Failed to fetch todos");
     return res.json();
   },
 
   addTodo: async (data: TodoForm) => {
-    const res = await fetch(`http://localhost:4000/`, {
+    const res = await fetch(`https://supabase-hono-backend.vercel.app/`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(data),
@@ -44,7 +44,7 @@ const api = {
   },
 
   updateTodo: async (id: number, data: Todo) => {
-    const res = await fetch(`http://localhost:4000/${id}`, {
+    const res = await fetch(`https://supabase-hono-backend.vercel.app/${id}`, {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(data),
@@ -54,7 +54,7 @@ const api = {
   },
 
   patchTodo: async (id: number, data: Partial<Todo>) => {
-    const res = await fetch(`http://localhost:4000/${id}`, {
+    const res = await fetch(`https://supabase-hono-backend.vercel.app/${id}`, {
       method: "PATCH",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(data),
@@ -64,7 +64,7 @@ const api = {
   },
 
 deleteTodo: async (id: number) => {
-  const res = await fetch(`http://localhost:4000/${id}`, {
+  const res = await fetch(`https://supabase-hono-backend.vercel.app/${id}`, {
     method: "DELETE",
   })
   if (!res.ok) throw new Error("Failed to delete todo")
